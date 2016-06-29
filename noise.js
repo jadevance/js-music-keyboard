@@ -12,27 +12,29 @@
 
 $(document).ready( function() {
   var buttons = $('button')
-  var allNotes = $('audio')
+  // var allNotes = $('audio')
 
   buttons.on('click', function(event) {
     event.preventDefault()
     var button = $(this)
     if (button.hasClass('note c')) {
-      var cAudio = $('audio#cAudio')[0].play()
+      var audio = $('audio#cAudio')[0]
     } else if (button.hasClass('note d')) {
-      var dAudio = $('audio#dAudio')[0].play()
+      var audio = $('audio#dAudio')[0]
     } else if (button.hasClass('note e')) {
-      var eAudio = $('audio#eAudio')[0].play()
+      var audio = $('audio#eAudio')[0]
     } else if (button.hasClass('note f')) {
-      var fAudio = $('audio#fAudio')[0].play()
+      var audio = $('audio#fAudio')[0]
     } else if (button.hasClass('note g')) {
-      var gAudio = $('audio#gAudio')[0].play()
+      var audio = $('audio#gAudio')[0]
     } else if (button.hasClass('note a')) {
-      var aAudio = $('audio#aAudio')[0].play()
+      var audio = $('audio#aAudio')[0]
     } else if (button.hasClass('note b')) {
-      var bAudio = $('audio#bAudio')[0].play()
+      var audio = $('audio#bAudio')[0]
     } else {
       console.log('else conditon hit!!')
     }
+    audio.play();
+    audio.currentTime = 0 
   })
 });
